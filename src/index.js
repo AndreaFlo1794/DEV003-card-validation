@@ -79,6 +79,7 @@ cvcInput.addEventListener('input', ()=>{
 });
 
 
+
 //BOTON CONFIRMAR//
 
 let confirmBtn= document.querySelector('.form__submit')
@@ -89,7 +90,7 @@ let ValidacionMes= false;
 let ValidacionAño= false;
 let ValidacionCVC= false;
 
-//FORMULARIO Y GRACIAS//
+//FORMULARIO//
 let formulariosSeccion= document.querySelector('.form');
 
 
@@ -176,7 +177,6 @@ function verificar(divInput, divError){
 
 }
 
-
 function validateletra(input, Error){
     let regExp = /[A-z]/g;
     if(regExp.test(input.value)){
@@ -185,3 +185,4 @@ function validateletra(input, Error){
         MostrarError(input, Error, '', false);
     }
 }
+
