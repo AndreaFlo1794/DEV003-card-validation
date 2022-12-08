@@ -185,4 +185,3 @@ function validateletra(input, Error){
         MostrarError(input, Error, '', false);
     }
 }
-
