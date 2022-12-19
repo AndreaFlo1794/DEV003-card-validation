@@ -1,55 +1,50 @@
-
 const validator = {
-  isValid: function (inputCard) {
-    const reverseInput = inputCard.toString().split('').reverse().map(Number);
-    console.log(reverseInput); 
+  // ...
+
+  isValid:function (creditCardNumber) {
     
-    // Operación a las posiciones pares 
-    let newArray = reverseInput.map((num, i) => {
-      if (i % 2 === 1) {
-        const double = (num * 2);
-        const m = double.toString().split('').reduce(function (a, b) { 
-          if (double >= 10) { 
-            return a + parseInt(b);
-          } else {
-            return double;
-          }
-        }, 0);
-        return m;
-      } else {
-        return num;
+    const tarjeta =creditCardNumber; 
+    const reversoTarjetaArray = tarjeta.split("");
+    const reversoTarjeta=reversoTarjetaArray.reverse();  
+    for(let i =0 ;i<reversoTarjeta.length;i++){
+      if(i%2!==0){
+        const ok =parseInt(reversoTarjeta[i])*2
+        if(ok>=10){     
+          const ok2=Math.trunc(ok/10) + ok%10;
+          reversoTarjeta[i]=ok2+"";
+        }else{
+          reversoTarjeta[i]=ok +"";
+        }
       }
-    }); 
-    //console.log(newArray);
-
-    // Sumar todos los números del array
-    newArray = newArray.reduce((previus, next) => {
-      const sum = previus + next;
-      return sum;
-      }, 0);
-    //console.log(newArray); 
-
-    if (newArray % 10 === 0) {
+    }
+    let suma=0;
+    for(let i=0;i<reversoTarjeta.length;i++){
+      suma+=parseInt(reversoTarjeta[i]);
+    }
+    if(suma%10===0){
       return true;
-    } else {
+    }else{
       return false;
     }
   },
-
-  maskify: function (inputCard) {
-    let value =  inputCard.toString();
-    // Números que estarán ocultos
-    let replaceNums = value.slice(0, -4);
-    // Números que serán visibles
-    let noReplaceNums = value.slice(-4);
-    // Nuevo array que oculta los números
-    let newArray = replaceNums.split('').map(function() {
-      return '#';
-    });
-    newArray = newArray.join('');
-    return newArray.concat(noReplaceNums);
-
-  },
   
+  maskify: function(creditCardNumber){
+    const sinespacio=creditCardNumber.replace(/\s/g,"");
+    let mask=sinespacio
+    if(sinespacio.length>4){
+      const cadena1=sinespacio.slice(0,-4).replace(/[\da-zA-Z]/g,"#")
+      const cadena2=sinespacio.slice(-4)
+      mask=cadena1+cadena2
+      return mask
+    }
+    return mask
+    
+  }
+  
+
 }
-  export default validator;
+
+
+;
+
+export default validator;

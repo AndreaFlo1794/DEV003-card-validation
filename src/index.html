@@ -25,13 +25,12 @@
         </div>
       </section>
       <section class="main-container_form">
-        <form class="form" action="">
+        <form id="form" class="form" action="">
           <label class="form__label" for="nombre tarjeta">Nombre de la tarjeta</label>
           <input class="form__input" type="text" name="nombreDeTarjeta" id="nombreDeTarjeta" placeholder="Nombres y Apellidos">
           <div class="form__inputnombredelatarjeta--error"></div>
-        </div>
           <label class="form__label">Numero de la tarjeta</label>
-          <input class="form__input" type="text" name="numerodetarjeta" id="numerodetarjeta" maxlength="19" placeholder="0000 0000 0000 0000">
+          <input class="form__input" type="text" name="numerodetarjeta" id="numerodetarjeta" maxlength="16" placeholder="0000 0000 0000 0000">
           <div class="form__inputNumerodelatajeta--error"></div>
         <div class="form__fecha_cvc"><!--grid-->
            <!--elemento 1-->
@@ -53,7 +52,7 @@
          <!--elemento 6-->
         <div class="form__input-cvc-error"></div>
         </div>
-        <input class="form__submit" type="submit" value="Confirmar">
+        <input class="form__submit" id="button_form" type="submit" value="Confirmar">
         </form>
       </section>
     </main>
