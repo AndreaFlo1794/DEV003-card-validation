@@ -42,7 +42,7 @@ numberInput.addEventListener('input', ()=>{
   if(numberInput.value === ''){
     numbercard.textContent = '0000000000000000';
   }
-  validator.maskify(numberInput.value)
+  // validator.maskify(numberInput.value)
 });
 //INGRESO DEL MES//
 monthInput.addEventListener('input', ()=>{ 

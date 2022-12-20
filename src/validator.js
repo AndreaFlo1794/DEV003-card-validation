@@ -8,12 +8,12 @@ const validator = {
     const reversoTarjeta=reversoTarjetaArray.reverse();  
     for(let i =0 ;i<reversoTarjeta.length;i++){
       if(i%2!==0){
-        const ok =parseInt(reversoTarjeta[i])*2
-        if(ok>=10){     
-          const ok2=Math.trunc(ok/10) + ok%10;
-          reversoTarjeta[i]=ok2+"";
+        const num1 =parseInt(reversoTarjeta[i])*2
+        if(num1>=10){     
+          const num2=Math.trunc(num1/10) + num1%10;
+          reversoTarjeta[i]=num2+"";
         }else{
-          reversoTarjeta[i]=ok +"";
+          reversoTarjeta[i]=num1 +"";
         }
       }
     }
