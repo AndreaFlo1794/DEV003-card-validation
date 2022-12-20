@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tarjeta de credito valida</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&family=Roboto&display=swap" rel="stylesheet">
+    <header></header>
+    <main class="main-container">
+      <section class="main-container_background">
+        <div class="card" id="tarjeta">
+          <br>
+          <p class="card__numeroDeTarjeta">0000 0000 0000 0000</p>
+          <div class="card__DatosDeTarjeta">
+            <p class="card__DatosNombre">XXXX XXXX</p>
+            <p> <span class="card_mes">00</span>/<span class="card_año">00</span></p>
+          </div>
+        </div>
+
+        <div class="card-back">
+          <p class="card_back__cvc">000</p>
+        </div>
+      </section>
+      <section class="main-container_form">
+        <form id="form" class="form" action="">
+          <label class="form__label" for="nombre tarjeta">Nombre de la tarjeta</label>
+          <input class="form__input" type="text" name="nombreDeTarjeta" id="nombreDeTarjeta" placeholder="Nombres y Apellidos">
+          <div class="form__inputnombredelatarjeta--error"></div>
+          <label class="form__label">Numero de la tarjeta</label>
+          <input class="form__input" type="text" name="numerodetarjeta" id="numerodetarjeta" maxlength="16" placeholder="0000 0000 0000 0000">
+          <div class="form__inputNumerodelatajeta--error"></div>
+        <div class="form__fecha_cvc"><!--grid-->
+           <!--elemento 1-->
+          <label class="form__label">Fecha de ven (MM/AA)</label>
+           <!--elemento 2-->
+          <label class="form__label">CVC</label>
+          <!--elemento 3-->
+          <div class="form__fecha">
+            <input class="form__input" type="text" name="mes" id="mes" placeholder="MM" maxlength="2">
+            <input class="form__input" type="text" name="año" id="año" placeholder="AA" maxlength="2">
+          </div>
+          <!--elemento 4-->
+          <input class="form__input" type="text" name="numero cvc" id="numerocvc" placeholder="000"  maxlength="3">
+         <!--elemento 5-->
+          <div class="form__errores">
+          <div class="form__input-mm-error"></div>
+          <div class="form__input-aa-error"></div>
+        </div>
+         <!--elemento 6-->
+        <div class="form__input-cvc-error"></div>
+        </div>
+        <input class="form__submit" id="button_form" type="submit" value="Confirmar">
+        </form>
+      </section>
+    </main>
+
+    <footer></footer>
+    <script src="index.js" type="module"></script>
+  </body>
+</html>
